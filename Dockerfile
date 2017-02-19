@@ -1,4 +1,4 @@
-FROM soflabs/spark:2.1-hadoop-2.7
+FROM sofianito/spark
 
 # Zeppelin
 ENV ZEPPELIN_VERSION 0.7.0
