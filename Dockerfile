@@ -19,10 +19,8 @@ RUN set -ex \
  && mkdir -p $ZEPPELIN_HOME/run \
  && $ZEPPELIN_HOME/bin/install-interpreter.sh -a
 
- ##&& cp $ZEPPELIN_HOME/conf/shiro.ini.template $ZEPPELIN_HOME/conf/shiro.ini \
- ##&& cp $ZEPPELIN_HOME/conf/zeppelin-site.xml.template $ZEPPELIN_HOME/conf/zeppelin-site.xml \
+COPY zeppelin-env.sh $ZEPPELIN_HOME/conf/
 
 ADD about.json $ZEPPELIN_NOTEBOOK_DIR/2BTRWA9EV/note.json
 WORKDIR $ZEPPELIN_HOME
 CMD ["bin/zeppelin.sh"]
-
