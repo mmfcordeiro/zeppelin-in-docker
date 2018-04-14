@@ -19,6 +19,9 @@ RUN set -ex \
  && mkdir -p $ZEPPELIN_HOME/run \
  && $ZEPPELIN_HOME/bin/install-interpreter.sh -a
 
+RUN pip install --upgrade tensorflow
+RUN pip install -U pandasql
+
 COPY zeppelin-env.sh $ZEPPELIN_HOME/conf/
 
 ADD about.json $ZEPPELIN_NOTEBOOK_DIR/2BTRWA9EV/note.json
