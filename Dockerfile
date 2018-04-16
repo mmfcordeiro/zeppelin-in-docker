@@ -21,6 +21,7 @@ RUN set -ex \
 
 RUN pip install --upgrade tensorflow
 RUN pip install -U pandasql
+RUN pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
 
 COPY zeppelin-env.sh $ZEPPELIN_HOME/conf/
 
