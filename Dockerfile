@@ -20,6 +20,7 @@ RUN set -ex \
  && $ZEPPELIN_HOME/bin/install-interpreter.sh -a
 
 RUN pip install --upgrade tensorflow
+RUN pip install --upgrade keras
 RUN pip install -U pandasql
 RUN pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
 
