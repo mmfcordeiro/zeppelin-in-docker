@@ -6,7 +6,7 @@ ENV ZEPPELIN_PACKAGE zeppelin-${ZEPPELIN_VERSION}-bin-all
 ENV ZEPPELIN_HOME /opt/zeppelin-${ZEPPELIN_VERSION}
 ENV ZEPPELIN_PORT 8080
 ENV ZEPPELIN_CONF_DIR $ZEPPELIN_HOME/conf
-ENV ZEPPELIN_NOTEBOOK_DIR /notebook
+ENV ZEPPELIN_NOTEBOOK_DIR /notebook/tensorflow-demo-zeppelin
 ENV PATH $PATH:${ZEPPELIN_HOME}/bin
 
 RUN set -ex \
@@ -25,7 +25,6 @@ RUN pip install -U pandasql
 RUN pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
 
 COPY zeppelin-env.sh $ZEPPELIN_HOME/conf/
-
-ADD about.json $ZEPPELIN_NOTEBOOK_DIR/2BTRWA9EV/note.json
+RUN git clone https://github.com/mmfcordeiro/tensorflow-demo-zeppelin.git /notebook
 WORKDIR $ZEPPELIN_HOME
 CMD ["bin/zeppelin.sh"]
