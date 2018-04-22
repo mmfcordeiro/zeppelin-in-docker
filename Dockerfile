@@ -25,6 +25,6 @@ RUN pip install -U pandasql
 RUN pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
 
 COPY zeppelin-env.sh $ZEPPELIN_HOME/conf/
-RUN git clone https://github.com/mmfcordeiro/tensorflow-demo-zeppelin.git /notebook
+RUN git clone https://github.com/mmfcordeiro/tensorflow-demo-zeppelin.git /notebook/tensorflow-demo-zeppelin
 WORKDIR $ZEPPELIN_HOME
 CMD ["bin/zeppelin.sh"]
