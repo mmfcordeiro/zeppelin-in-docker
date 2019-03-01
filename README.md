@@ -35,6 +35,6 @@ This image is large and contains:
 ### usage
 
 ```
-docker run --rm -p 8080:8080 -p 4040:4040 sofianito/zeppelin
+docker run --rm -p 8080:8080 -p 4040:4040 mmfcordeiro/zeppelin-in-docker-with-tensorflow
 ```
 
