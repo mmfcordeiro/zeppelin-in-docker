@@ -38,3 +38,8 @@ This image is large and contains:
 docker run --rm -p 8080:8080 -p 4040:4040 mmfcordeiro/zeppelin-in-docker-with-tensorflow
 ```
 
+### zeppelin
+
+```
+http://localhost:8080/#/
+```
